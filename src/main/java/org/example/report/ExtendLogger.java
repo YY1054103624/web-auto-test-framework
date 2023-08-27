@@ -65,41 +65,29 @@ public final class ExtendLogger {
     }
 
     public static void pass(String message, ConfigProperties property) {
-        try {
-            if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
-                ExtendReportManager.getExtTest().
-                        pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-            } else {
-                pass(message);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
+            ExtendReportManager.getExtTest().
+                    pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+        } else {
+            pass(message);
         }
     }
 
     public static void fail(String message, ConfigProperties property) {
-        try {
-            if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
-                ExtendReportManager.getExtTest().
-                        fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-            } else {
-                fail(message);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
+            ExtendReportManager.getExtTest().
+                    fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+        } else {
+            fail(message);
         }
     }
 
     public static void skip(String message, ConfigProperties property) {
-        try {
-            if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
-                ExtendReportManager.getExtTest().
-                        skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
-            } else {
-                skip(message);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        if (PropertiesUtils.getValue(property).equalsIgnoreCase("yes")) {
+            ExtendReportManager.getExtTest().
+                    skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64()).build());
+        } else {
+            skip(message);
         }
     }
 

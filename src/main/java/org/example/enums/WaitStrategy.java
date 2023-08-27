@@ -12,31 +12,31 @@ import java.time.Duration;
 public enum WaitStrategy {
     CLICKABLE {
         @Override
-        public WebElement wait(By by) {
+        public WebElement explicitWait(By by) {
             return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitlyDuration()))
                     .until(ExpectedConditions.elementToBeClickable(by));
         }
     },
     PRESENCE {
         @Override
-        public WebElement wait(By by) {
+        public WebElement explicitWait(By by) {
             return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitlyDuration()))
                     .until(ExpectedConditions.presenceOfElementLocated(by));
         }
     },
     VISIBLE {
         @Override
-        public WebElement wait(By by) {
+        public WebElement explicitWait(By by) {
             return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitlyDuration()))
                     .until(ExpectedConditions.visibilityOfElementLocated(by));
         }
     },
     NONE {
         @Override
-        public WebElement wait(By by) {
+        public WebElement explicitWait(By by) {
             return DriverManager.getDriver().findElement(by);
         }
     };
 
-    public abstract WebElement wait(By by);
+    public abstract WebElement explicitWait(By by);
 }

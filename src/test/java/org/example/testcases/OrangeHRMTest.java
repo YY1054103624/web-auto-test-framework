@@ -1,46 +1,61 @@
 package org.example.testcases;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import org.assertj.core.api.Assertions;
+import org.example.annotations.FrameworkAnnotation;
+import org.example.enums.Author;
+import org.example.enums.Category;
 import org.example.pages.OrangeHRMLoginPage;
-import org.example.report.ExtendReport;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+import java.util.Map;
 
 public final class OrangeHRMTest extends BaseTestSettings{
     private OrangeHRMTest() {
 
     }
 
-    @Test(dataProvider = "loginDataProvider")
-    public void loginLogoutTest(String username, String password) {
+    @FrameworkAnnotation(authors = {Author.LEE}, categories = {Category.REGRESSION})
+    @Test
+    public void loginLogoutTest(Map<String, String> map) {
         String title = new OrangeHRMLoginPage().
-                enterUsername(username).enterPassword(password).clickLogin()
+                enterUsername(map.get("username")).enterPassword(map.get("password")).clickLogin()
                 .clickProfile().clickLogout().getTitle();
 
         Assertions.assertThat(title)
                 .isEqualTo("OrangeHRM");
     }
 
-    @Test(dataProvider = "loginDataProvider")
-    public void newTest(String username, String password) {
+    @FrameworkAnnotation(authors = {Author.LEE}, categories = {Category.SMOKE})
+    @Test
+    public void newTest(Map<String, String> map) {
         String title = new OrangeHRMLoginPage().
-                enterUsername(username).enterPassword(password).clickLogin()
+                enterUsername(map.get("username")).enterPassword(map.get("password")).clickLogin()
                 .clickProfile().clickLogout().getTitle();
 
         Assertions.assertThat(title)
                 .isEqualTo("OrangeHRM");
     }
 
-    @DataProvider(name = "loginDataProvider", parallel = true)
-    public Object[][] getData() {
-        return new Object[][] {
-                {"Admin", "admin123"}
-//                {"Admin123", "Admin123admin"}
-//                {"Admin", "admin123"}
-//                {"Admin123", "admin"}
-        };
+    @FrameworkAnnotation(authors = {Author.OSCAR}, categories = {Category.SMOKE, Category.REGRESSION})
+    @Test
+    public void enterAdminPageTest(Map<String, String> map) {
+        String pageName = new OrangeHRMLoginPage().
+                enterUsername(map.get("username")).enterPassword(map.get("password")).clickLogin()
+                .clickAdminButton().getPageName();
+
+        Assertions.assertThat(pageName)
+                .isEqualTo("Admin");
     }
+
+    @FrameworkAnnotation(authors = {Author.OSCAR, Author.JARRY}, categories = {Category.SMOKE, Category.MINIREGRESSION})
+    @Test
+    public void enterPIMPageTest(Map<String, String> map) {
+        String pageName = new OrangeHRMLoginPage().
+                enterUsername(map.get("username")).enterPassword(map.get("password")).clickLogin()
+                .clickPIMButton().getPageName();
+
+        Assertions.assertThat(pageName)
+                .isEqualTo("PIM");
+    }
+
 }

@@ -1,16 +1,8 @@
 package org.example.pages;
 
-import com.google.common.util.concurrent.Uninterruptibles;
-import org.example.drivers.DriverManager;
 import org.example.enums.WaitStrategy;
+import org.example.utils.LocatorUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class OrangeHRMHomePage extends BasePage{
     private final By link_username = By.xpath("//p[@class='oxd-userdropdown-name']");
@@ -22,11 +14,24 @@ public class OrangeHRMHomePage extends BasePage{
         return this;
     }
 
+    private final String dynamicXpath = "//a/span[text()='%s']";
     public OrangeHRMLoginPage clickLogout() {
         // Use this to replace Thread.sleep(3000)
 //        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(3));
 
         click(link_logout, WaitStrategy.CLICKABLE, "link logout", true);
         return new OrangeHRMLoginPage();
+    }
+
+    public OrangeHRMAdminPage clickAdminButton() {
+        String xpath = LocatorUtils.dynamicReplace(dynamicXpath, "Admin");
+        click(By.xpath(xpath), WaitStrategy.CLICKABLE, "Admin button", true);
+        return new OrangeHRMAdminPage();
+    }
+
+    public OrangeHRMPIMPage clickPIMButton() {
+        String xpath = LocatorUtils.dynamicReplace(dynamicXpath, "PIM");
+        click(By.xpath(xpath), WaitStrategy.CLICKABLE, "PIM button", false);
+        return new OrangeHRMPIMPage();
     }
 }

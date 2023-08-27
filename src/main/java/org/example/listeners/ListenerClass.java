@@ -1,6 +1,7 @@
 package org.example.listeners;
 
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import org.example.annotations.FrameworkAnnotation;
 import org.example.enums.ConfigProperties;
 import org.example.report.ExtendLogger;
 import org.example.report.ExtendReport;
@@ -19,16 +20,18 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 
     @Override
     public void onFinish(ISuite suite) {
-        try {
-            flushExtentReport();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        flushExtentReport();
     }
 
     @Override
     public void onTestStart(ITestResult result) {
         ExtendReport.createExtentTest(result.getMethod().getDescription());
+        ExtendReport.setAuthor(
+                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).authors()
+        );
+        ExtendReport.setCategories(
+                result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).categories()
+        );
     }
 
     @Override

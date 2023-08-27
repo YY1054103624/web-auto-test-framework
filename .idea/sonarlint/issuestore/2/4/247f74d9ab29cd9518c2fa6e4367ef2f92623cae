@@ -1,0 +1,15 @@
+
+i
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Í±™8ÁÉßÚ¢1
+l
+java:S2095."JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¼Ö‰»üÿÿÿÿ8ÀÉßÚ¢1
+l
+java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¼Ö‰»üÿÿÿÿ8ÁÉßÚ¢1
+i
+java:S2095-"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Í±™8ÁÉßÚ¢1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(­ ‘ˆüÿÿÿÿ8ÃÉßÚ¢1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(û…½Àşÿÿÿÿ8ÄÉßÚ¢1
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(‡¯ã¹8ÌÉßÚ¢1
+T	java:S106("9Replace this use of System.out or System.err by a logger.(Î›µ48ÍÉßÚ¢1
+\
+java:S1128	":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8ÏÉßÚ¢1

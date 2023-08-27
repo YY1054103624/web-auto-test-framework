@@ -1,7 +1,7 @@
 package org.example.pages;
 
-import org.example.drivers.DriverManager;
 import org.example.enums.WaitStrategy;
+import org.example.utils.DecodeUtils;
 import org.openqa.selenium.By;
 
 public final class OrangeHRMLoginPage extends BasePage{
@@ -17,7 +17,7 @@ public final class OrangeHRMLoginPage extends BasePage{
     }
 
     public OrangeHRMLoginPage enterPassword(String password) {
-        sendText(txt_password, password, WaitStrategy.PRESENCE, "password box", true);
+        sendText(txt_password, DecodeUtils.getDecodedString(password), WaitStrategy.PRESENCE, "password box", true);
         return this;
     }
 

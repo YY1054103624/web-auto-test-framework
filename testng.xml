@@ -2,12 +2,13 @@
 
 <suite name="Suite1" verbose="1" data-provider-thread-count="3">
     <listeners>
-        <listener class-name="org.example.listeners.MethodInterceptor"></listener>
-        <listener class-name="org.example.listeners.ListenerClass"></listener>
+        <listener class-name="org.example.listeners.ListenerClass"/>
+        <listener class-name="org.example.listeners.MethodInterceptor"/>
+        <listener class-name="org.example.listeners.ListenerAnnotationTransformer"/>
     </listeners>
-    <test thread-count="1" name="Regression1" parallel="methods">
+    <test thread-count="2" name="Regression1" parallel="methods">
         <classes>
-            <class name="org.example.testcases.OrangeHRMTest"></class>
+            <class name="org.example.testcases.OrangeHRMTest"/>
         </classes>
     </test>
 </suite>
