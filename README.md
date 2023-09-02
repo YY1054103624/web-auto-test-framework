@@ -12,7 +12,7 @@ Features
 | Cross-browser             | Execute test cases on different browsers with different vertions.  |
 | Video recording           | Record videos during the running process of each test case.        |
 | Detailed report           | Screenshots, browser logs, videos, authors, categories and so on...|
-|Run-time report            | Combine Elasticsaerch with Kibana to realize real-time report.     |
+| Run-time report           | Combine Elasticsaerch with Kibana to realize real-time report.     |
 | Docker                    | Deploy the test environment wherever you want easly.               |
 
 Precondition
@@ -50,7 +50,11 @@ Make sure kibana is started by accessing **http://your-ip:5601**
 
 Config kibana
 ---------------
-Open url **http://your-ip:5601**. Enter Index Pattern page
+Open url **http://your-ip:5601**. 
+
+Enter Index Pattern page, select 'suite' as index pattern.
+
+Create a dashboard with a visualization, please refer to [Kibana doc](https://www.elastic.co/kibana/).
 
 Modify config file
 ---------------
@@ -63,3 +67,24 @@ selenoidremoteurl=http://localhost:4445/wd/hub
 logurl=http://your-ip:4445/logs/
 videourl=http://your-ip:4445/video/
 ```
+
+Run test cases
+--------------
+Enter project web-auto-test-framework you pulled, run the maven command:
+```text
+mvn test
+```
+Then you can see the running process with Kibana web page and Selenoid web page.
+
+Check the report
+--------------
+Normally the test report will opened automatically, but in case it isn't opened, you can find it under target/generated-reports.
+
+What isn't covered here
+--------------
+- Create test cases
+- Config test cases
+- Config the number of threads
+- Clear the test environment after testing
+- Execute test cases on selenium-hub
+- Log with Extend Reports
