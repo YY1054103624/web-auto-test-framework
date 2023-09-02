@@ -1,9 +1,12 @@
 package org.example.drivers;
 
 import org.openqa.selenium.WebDriver;
+
+import java.util.Objects;
+
 /**
  * This class is for safely invoking {@link org.openqa.selenium.WebDriver} object in parallel by saving it in {@link java.lang.ThreadLocal}
- * <p></p>
+ * <p>
 * 2023/8/27
 * @author Yong Yang
 * @version 1.0
@@ -19,8 +22,10 @@ public final class DriverManager {
      * Save the driver into {@link java.lang.ThreadLocal} object.
      * @param driver {@link org.openqa.selenium.WebDriver} object
      */
-    public static void setDriver(WebDriver driver) {
-        dr.set(driver);
+    static void setDriver(WebDriver driver) {
+        if (Objects.nonNull(driver)) {
+            dr.set(driver);
+        }
     }
 
     /**

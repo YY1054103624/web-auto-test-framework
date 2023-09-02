@@ -4,7 +4,7 @@ import java.util.Base64;
 
 /**
  * This class is for decoding string.
- * <p></p>
+ * <p>
 * 2023/8/27
 * @author Yong Yang
 * @version 1.0

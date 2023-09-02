@@ -12,7 +12,7 @@ import java.util.Properties;
 
 /**
  * This class is for processing {@link java.util.Properties}.
- * <p></p>
+ * <p>
 * 2023/8/27
 * @author Yong Yang
 * @version 1.0
@@ -36,7 +36,7 @@ public final class PropertiesUtils {
      */
     public static Properties getPropertiesFromConfigFile() {
         Properties configProperties = new Properties();
-        try (FileInputStream fis = new FileInputStream(FrameworkConstants.getConfigFilePath());){
+        try (FileInputStream fis = new FileInputStream(FrameworkConstants.getConfigFilePath())){
             configProperties.load(fis);
         } catch (FileNotFoundException e) {
             throw new ConfigFileNotFoundException("config.properties is not found, please check the file path.", e);

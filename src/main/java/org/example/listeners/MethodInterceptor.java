@@ -8,7 +8,23 @@ import org.testng.ITestContext;
 
 import java.util.*;
 
+/**
+ * Implementation of {@link IMethodInterceptor}
+ * <p>
+* 2023/8/27
+* @author Yong Yang
+* @version 1.0
+* @since 1.0
+*/
 public class MethodInterceptor implements IMethodInterceptor {
+    /**
+     * Filter test cases that are going to be executed with Excel file.
+     * <p>
+    * 2023/8/27
+    * @author Yong Yang
+    * @version 1.0
+    * @since 1.0
+    */
     @Override
     public List<IMethodInstance> intercept(List<IMethodInstance> list, ITestContext iTestContext) {
         List<IMethodInstance> testSet = new ArrayList<>();

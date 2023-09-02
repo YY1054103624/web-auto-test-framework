@@ -9,6 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * This class all the element explicit-wait strategies.
+ * <p>
+* 2023/8/28
+* @author Yong Yang
+* @version 1.0
+* @since 1.0
+*/
 public enum WaitStrategy {
     CLICKABLE {
         @Override

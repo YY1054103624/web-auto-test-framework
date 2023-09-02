@@ -5,9 +5,17 @@ import org.example.utils.PropertiesUtils;
 
 import java.io.File;
 
+/**
+ * Framework constants.
+ * <p>
+* 2023/8/28
+* @author Yong Yang
+* @version 1.0
+* @since 1.0
+*/
 public final class FrameworkConstants {
     private static final String RESOURCE_DIR_PATH = System.getProperty("user.dir") + File.separator + "src/test/resources";
-    private static final String CONFIG_FILE_PATH = RESOURCE_DIR_PATH + File.separator + "config/config1.properties";
+    private static final String CONFIG_FILE_PATH = RESOURCE_DIR_PATH + File.separator + "config/config.properties";
 
     private static final int EXPLICITLY_DURATION = 10;
     private static final long TIMESTAMP = System.currentTimeMillis();

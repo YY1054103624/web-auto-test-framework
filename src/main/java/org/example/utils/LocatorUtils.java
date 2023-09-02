@@ -2,7 +2,7 @@ package org.example.utils;
 
 /**
  * This class is for processing locators of {@link org.openqa.selenium.WebElement}.
- * <p></p>
+ * <p>
 * 2023/8/27
 * @author Yong Yang
 * @version 1.0

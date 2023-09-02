@@ -1,6 +1,6 @@
 /**
- * All the utils to process file, data and so on.
- * <p></p>
+ * Package process files, data and so on.
+ * <p>
 * 2023/8/27
 * @author Yong Yang
 * @version 1.0

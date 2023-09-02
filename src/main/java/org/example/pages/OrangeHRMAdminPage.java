@@ -3,10 +3,14 @@ package org.example.pages;
 import org.example.enums.WaitStrategy;
 import org.openqa.selenium.By;
 
-public class OrangeHRMAdminPage extends BasePage {
-    By label_page_name = By.xpath("//h6[text()='Admin']");
+/**
+ * This class represents the Admin functional page.
+ * <p>
+* 2023/8/27
+* @author Yong Yang
+* @version 1.0
+* @since 1.0
+*/
+public class OrangeHRMAdminPage extends OrangeHRMCommonFunctionalPage{
 
-    public String getPageName() {
-        return getElementText(label_page_name, WaitStrategy.VISIBLE, "Page name", false);
-    }
 }

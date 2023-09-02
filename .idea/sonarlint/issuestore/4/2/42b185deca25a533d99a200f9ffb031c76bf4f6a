@@ -1,9 +1,9 @@
 
-y	java:S116"XRename this field "link_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŒÅàýÿÿÿÿ8Ïºë€£1
-w	java:S116
-"VRename this field "link_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¡·¿ýÿÿÿÿ8Ðºë€£1
-C
-java:S1170"!Make this final field static too.(€†£Áüÿÿÿÿ8Ðºë€£1
+v
+java:S1192#"YDefine a constant instead of duplicating this literal " is clicked successfully" 4 times.(”ö†ñ8å»²«¤1
+y	java:S116"XRename this field "link_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŒÅàýÿÿÿÿ8è»²«¤1
+w	java:S116"VRename this field "link_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¡·¿ýÿÿÿÿ8è»²«¤1
 c
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(€†£Áüÿÿÿÿ8Ñºë€£1
-X	java:S125"<This block of commented-out lines of code should be removed.(Ž±ïÙ8Òºë€£1
+java:S1075'"ARefactor your code to get this URI from a customizable parameter.(©’˜¯úÿÿÿÿ8é»²«¤1
+Y
+java:S1128"<Remove this unused import 'org.example.report.ExtendLogger'.(¤•ÍÃ8üï–¬¤1
