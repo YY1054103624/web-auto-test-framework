@@ -19,7 +19,7 @@ public final class FrameworkConstants {
 
     private static final int EXPLICITLY_DURATION = 10;
     private static final long TIMESTAMP = System.currentTimeMillis();
-    private static final String EXTENT_REPORT_FOLDER_PATH = System.getProperty("user.dir") + File.separator + "target/generated-reports";
+    private static final String EXTENT_REPORT_FOLDER_PATH = System.getProperty("user.dir") + File.separator + "target/generated-html-report";
     private static final String EXCEL_FILE_PATH = System.getProperty("user.dir") + File.separator +"src/test/resources/excels/testdata.xlsx";
     private static final String RUNMANAGER_SHEET_NAME = "RUNMANAGER";
     private static final String DATA_SHEET_NAME = "DATA";

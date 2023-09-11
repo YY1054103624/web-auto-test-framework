@@ -5,15 +5,16 @@ This framework is built with Java-Selenium-Selenium Grid-Selenoid-Extend Report.
 
 Features
 --------------
-| Operator                  | Description                                                        |
-| :------------------------ | :----------------------------------------------------------------- |
-| Parallel                  | Execute simultaneously.                                            |
-| Flexible                  | Config which test cases you are going to execute by Excel.         |
-| Cross-browser             | Execute test cases on different browsers with different vertions.  |
-| Video recording           | Record videos during the running process of each test case.        |
-| Detailed report           | Screenshots, browser logs, videos, authors, categories and so on...|
-| Run-time report           | Combine Elasticsaerch with Kibana to realize real-time report.     |
-| Docker                    | Deploy the test environment wherever you want easly.               |
+| Operator        | Description                                                                      |
+|:----------------|:---------------------------------------------------------------------------------|
+| Parallel        | Execute simultaneously.                                                          |
+| Flexible        | Config which test cases you are going to execute by Excel.                       |
+| Cross-browser   | Execute test cases on different browsers with different vertions.                |
+| Video recording | Record videos during the running process of each test case.                      |
+| Detailed report | Screenshots, browser logs, videos, authors, categories and so on...              |
+| Run-time report | Combine Elasticsaerch with Kibana to realize real-time report.                   |
+| Docker          | Deploy the test environment wherever you want easly.                             |
+| Jenkins         | Combine pipeline with shell, groovy script to trigger test at any time you want. |
 
 Precondition
 ---------------

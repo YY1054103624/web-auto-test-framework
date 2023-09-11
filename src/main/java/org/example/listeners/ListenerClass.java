@@ -89,7 +89,6 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtendLogger.pass(result.getMethod().getMethodName() + " is passed", ConfigProperties.PASSEDSCREENSHOTS);
-        log(LogType.EXTEND_PASS_AND_CONSOLE, result.getMethod().getMethodName() + " is passed", true);
         // Selenoid video and log (this works because testng runs onTestFailure before @AfterMethod
         if (Objects.nonNull(VideoUrlManager.get()))
             ExtendLogger.pass("The video link of Selenoid is " + VideoUrlManager.get());
@@ -108,7 +107,6 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestFailure(ITestResult result) {
         ExtendLogger.fail(result.getMethod().getMethodName() + " is failed", ConfigProperties.FAILEDSCREENSHOTS);
-        log(LogType.EXTEND_PASS_AND_CONSOLE, result.getMethod().getMethodName() + " is failed", true);
         ExtendLogger.fail(result.getThrowable().toString());
         ExtendLogger.fail(MarkupHelper.createUnorderedList(result.getThrowable().getStackTrace()));
         // Elasticsearch
@@ -131,7 +129,6 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtendLogger.skip(result.getMethod().getMethodName() + " is skipped", ConfigProperties.SHIPPEDSCREENSHOTS);
-        log(LogType.EXTEND_PASS_AND_CONSOLE, result.getMethod().getMethodName() + " is skipped", true);
         ELKUtils.post(result.getMethod().getDescription(), "skip");
     }
 }
